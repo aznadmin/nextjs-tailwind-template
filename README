@@ -1,0 +1,2 @@
+sudo npm install turbo --global
+pnpm dlx create-turbo@latest
