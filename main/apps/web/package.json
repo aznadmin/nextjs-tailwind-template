@@ -16,11 +16,13 @@
     "classnames": "^2.5.1",
     "clsx": "^2.1.0",
     "cmdk": "^1.0.0",
+    "common": "file:../../packages/common",
     "framer-motion": "^11.1.7",
     "lodash": "^4.17.21",
     "lucide-react": "^0.372.0",
     "next": "^14.2.2",
     "next-themes": "^0.3.0",
+    "postcss": "^8.4.38",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.8.2",
@@ -31,8 +33,7 @@
     "tailwind-merge": "^2.3.0",
     "typescript-config": "file:../../packages/typescript-config",
     "ui": "file:../../packages/ui",
-    "ui-patterns": "file:../../packages/ui-patterns",
-    "common": "file:../../packages/common"
+    "ui-patterns": "file:../../packages/ui-patterns"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.1.1",

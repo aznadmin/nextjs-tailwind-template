@@ -10,6 +10,7 @@ module.exports = config({
     './pages/**/*.{tsx,mdx}',
     './../../packages/ui/src/**/*.{tsx,ts,js}',
     './../../packages/ui-patterns/**/*.{tsx,ts,js}',
+    './**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
     extend: {
