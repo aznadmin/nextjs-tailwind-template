@@ -1,7 +1,6 @@
 'use client';
 
 import { Button, IconCornerRightUp, Tabs } from 'ui'
-import { useRouter } from 'next/router'
 import { useRef, useState } from 'react'
 
 // Import Swiper React components
@@ -14,6 +13,7 @@ import Image from 'next/image'
 import TextLink from '../TextLink'
 import ImageCarouselStyles from './ImageCarousel.module.css'
 import { useInView } from 'framer-motion'
+import { BASEPATH } from '@/lib/constants';
 
 interface Content {
   title: string
@@ -34,8 +34,6 @@ interface ImageCarouselProps {
 function ImageCarousel(props: ImageCarouselProps) {
   const sectionRef = useRef<any>(null)
   const isInView = useInView(sectionRef, { margin: '75%', once: true })
-  // base path for images
-  const { basePath } = useRouter()
 
   // store API swiper instance
   const [imageSwiper, setImageSwiper] = useState(undefined)
@@ -114,7 +112,7 @@ function ImageCarousel(props: ImageCarouselProps) {
                   <SwiperSlide key={i}>
                     {content.img_url && (
                       <Image
-                        src={`${basePath}${content.img_url}`}
+                        src={`${BASEPATH}${content.img_url}`}
                         alt={content.title}
                         layout="responsive"
                         width="1460"

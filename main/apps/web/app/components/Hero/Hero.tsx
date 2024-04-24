@@ -1,12 +1,13 @@
+'use client'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-import Telemetry, { TelemetryEvent } from '~/lib/telemetry'
+import { useRouter } from 'next/navigation'
+import Telemetry, { TelemetryEvent } from '@/lib/telemetry'
 import { useTelemetryProps } from 'common/hooks/useTelemetryProps'
-import gaEvents from '~/lib/gaEvents'
+import gaEvents from '@/lib/gaEvents'
 import { Button, IconBookOpen } from 'ui'
-import SectionContainer from '~/components/Layouts/SectionContainer'
+import SectionContainer from '@/components/Layouts/SectionContainer'
 import HeroFrameworks from './HeroFrameworks'
-import AnnouncementBadge from '../Announcement/Badge'
+import AnnouncementBadge from '@/components/Announcement/Badge'
 
 const Hero = () => {
   const router = useRouter()

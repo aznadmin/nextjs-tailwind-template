@@ -1,8 +1,10 @@
+'use client'
+
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { Badge, IconDiscord, IconGitHubSolid, IconTwitterX, IconYoutubeSolid, cn } from 'ui';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { CheckIcon } from '@heroicons/react/outline';
 import SectionContainer from '../Layouts/SectionContainer';
 
@@ -18,7 +20,8 @@ interface Props {
 
 const Footer = (props: Props) => {
   const { resolvedTheme } = useTheme();
-  const { pathname } = useRouter();
+  // const { pathname } = useRouter();
+  const pathname = usePathname();
 
   const isLaunchWeek = pathname.includes('launch-week') || pathname.includes('special-announcement');
   const forceDark = isLaunchWeek || pathname === '/';

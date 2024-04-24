@@ -1,9 +1,10 @@
-import { useRouter } from 'next/router'
+import { useRouter, usePahtname, usePathname } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
 const ScrollProgress = () => {
   const [progressPercentage, setProgressPercentage] = useState(0)
-  const { pathname } = useRouter()
+  // const { pathname } = useRouter()
+  const pathname = usePathname()
 
   const isBlogPost = pathname.includes('/blog/')
   if (!isBlogPost) return null

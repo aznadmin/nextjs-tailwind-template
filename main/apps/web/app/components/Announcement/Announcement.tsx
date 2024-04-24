@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 
 import _announcement from './data/Announcement.json'
-import { IconX, cn } from 'ui'
+import { IconX } from 'ui'
 import { useRouter, usePathname } from 'next/navigation'
 import { PropsWithChildren } from 'react'
+import Link from 'next/link'
 
 export interface AnnouncementProps {
   show: boolean
@@ -17,17 +18,17 @@ const announcement = _announcement as AnnouncementProps
 
 interface AnnouncementComponentProps {
   show?: boolean
-  dismissable?: boolean
   className?: string
+  link?: string
 }
 
 const Announcement = ({
   show = true,
-  dismissable = true,
   className,
   children,
+  link,
 }: PropsWithChildren<AnnouncementComponentProps>) => {
-  const [hidden, setHidden] = useState(false)
+  const [hidden, setHidden] = useState(true)
 
   const router = useRouter()
   const pathname = usePathname()
@@ -59,16 +60,17 @@ const Announcement = ({
     return null
   } else {
     return (
-      <div className={cn('relative z-40 w-full', className)}>
-        {dismissable && !isLaunchWeekSection && (
+      <div className={['relative z-40 w-full cursor-pointer', className].join(' ')}>
+        {!isLaunchWeekSection && (
           <div
-            className="absolute z-50 right-4 flex h-full items-center opacity-100 text-white transition-opacity hover:opacity-100"
+            className="absolute z-50 right-4 flex h-full items-center opacity-100 text-white transition-opacity hover:opacity-90"
             onClick={handleClose}
           >
             <IconX size={16} />
           </div>
         )}
         {children}
+        <Link href={link ?? announcement.link} className="absolute inset-0 z-40"></Link>
       </div>
     )
   }

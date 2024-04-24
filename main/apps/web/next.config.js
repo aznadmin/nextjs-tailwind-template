@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-  transpilePackages: ['@aznadmin/ui'],
+  transpilePackages: [
+     'ui', 'common', 'ui-patterns', 'shared-data', 'icons'],
 };

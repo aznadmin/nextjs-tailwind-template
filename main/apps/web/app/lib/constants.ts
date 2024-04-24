@@ -54,3 +54,4 @@ export const TWEET_TEXT_GOLDEN = `👁️⚡👁️`
 export const TWEET_TEXT_PLATINUM = `👁️⚡👁️`
 export const TWEET_TEXT_SECRET = `Just found a secret @supabase ticket. \n\nClaim a ticket and guess the word to find it:`
 export const SITE_NAME = 'Supabase'
+export const BASEPATH = ""

@@ -1,7 +1,8 @@
+'use client'
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useRouter, usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
 import { useWindowSize } from 'react-use';
 
@@ -32,16 +33,17 @@ interface Props {
 const Nav = (props: Props) => {
   const { resolvedTheme } = useTheme();
   const router = useRouter();
+  const pathname = usePathname();  
   const { width } = useWindowSize();
   const [open, setOpen] = useState(false);
   const isLoggedIn = useIsLoggedIn();
   const isUserLoading = useIsUserLoading();
 
-  const isHomePage = router.pathname === '/';
-  const isSpecialAnnouncementPage = router.pathname.includes('special-announcement');
-  const isLaunchWeekPage = router.pathname.includes('launch-week') || isSpecialAnnouncementPage;
-  const isLaunchWeekXPage = router.pathname === '/launch-week/x';
-  const isLaunchWeek11Page = router.pathname === '/special-announcement';
+  const isHomePage = pathname === '/';
+  const isSpecialAnnouncementPage = pathname.includes('special-announcement');
+  const isLaunchWeekPage = pathname.includes('launch-week') || isSpecialAnnouncementPage;
+  const isLaunchWeekXPage = pathname === '/launch-week/x';
+  const isLaunchWeek11Page = pathname === '/special-announcement';
   const showLaunchWeekNavMode = isLaunchWeekPage && !open;
 
   React.useEffect(() => {

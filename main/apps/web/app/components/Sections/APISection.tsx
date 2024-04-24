@@ -1,10 +1,11 @@
+'use client'
 // Import Swiper styles if swiper used on page
 import 'swiper/css'
 
 import { useState } from 'react'
 import { Button, IconArrowUpRight, Tabs } from 'ui'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import CodeBlock from '../CodeBlock/CodeBlock'
+import CodeBlock from '@/components/CodeBlock/CodeBlock'
 import Link from 'next/link'
 
 interface Example {

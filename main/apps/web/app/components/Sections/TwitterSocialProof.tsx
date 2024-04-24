@@ -1,14 +1,13 @@
+'use client'
 import { useState } from 'react';
-import { useRouter } from 'next/router';
 import { Button, IconMessageCircle } from 'ui';
 import Tweets from '@/data/tweets/Tweets.json';
 import Link from 'next/link';
 import { TweetCard } from 'ui-patterns/TweetCard';
-
+import {BASEPATH} from '@/lib/constants'
+import { BatteryWarning } from 'lucide-react';
 function TwitterSocialProof() {
   // base path for images
-  const { basePath } = useRouter();
-
   const [tweets, setTweets] = useState(Tweets.slice(0, 10));
   const [showButton, setShowButton] = useState(true);
 
@@ -52,7 +51,7 @@ function TwitterSocialProof() {
           {tweets.map((tweet: any, i: number) => (
             <div className="mb-4 z-0 break-inside-avoid-column" key={i}>
               <Link href={tweet.url} target="_blank">
-                <TweetCard handle={`@${tweet.handle}`} quote={tweet.text} img_url={`${basePath}${tweet.img_url}`} />
+                <TweetCard handle={`@${tweet.handle}`} quote={tweet.text} img_url={`${BASEPATH}${tweet.img_url}`} />
               </Link>
             </div>
           ))}

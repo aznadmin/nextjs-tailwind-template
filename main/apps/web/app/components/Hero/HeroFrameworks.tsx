@@ -1,8 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
-import Telemetry from '~/lib/telemetry'
+import Telemetry from '@/lib/telemetry'
 import { useTelemetryProps } from 'common/hooks/useTelemetryProps'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { useBreakpoint } from 'common'
 
 const frameworks = [

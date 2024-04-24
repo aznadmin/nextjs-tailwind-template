@@ -2,8 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 import { IconChevronRight } from 'ui'
 
-import Announcements from '~/data/Announcements.json'
-import { data as DevelopersData } from 'data/Developers'
+import Announcements from '@/data/Announcements.json'
+import { data as DevelopersData } from '@/data/Developers'
 
 type Props = {
   text: string

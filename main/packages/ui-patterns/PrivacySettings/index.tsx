@@ -1,9 +1,16 @@
-import { LOCAL_STORAGE_KEYS } from 'common'
+// import { LOCAL_STORAGE_KEYS } from 'common'
 import Link from 'next/link'
 import { PropsWithChildren, useEffect, useState } from 'react'
 import { Modal, Toggle } from 'ui'
 
 import { useConsentValue } from '../ConsentToast'
+
+const LOCAL_STORAGE_KEYS = {
+  TELEMETRY_CONSENT: 'supabase-consent',
+  HIDE_PROMO_TOAST: 'supabase-hide-promo-toast',
+  BLOG_VIEW: 'supabase-blog-view',
+}
+
 
 export const PrivacySettings = ({
   children,
