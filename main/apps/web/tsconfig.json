@@ -1,11 +1,14 @@
 {
-  "extends": "@aznadmin/typescript-config/nextjs.json",
+  "extends": "typescript-config/nextjs.json",
   "compilerOptions": {
     "plugins": [
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+        "@/*": ["./app/*"],
+    }
   },
   "include": [
     "next-env.d.ts",
