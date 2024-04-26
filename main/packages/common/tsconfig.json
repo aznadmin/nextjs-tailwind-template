@@ -1,8 +1,5 @@
 {
-  "compilerOptions": {
-    "jsx": "preserve"
-  },
-  "extends": "typescript-config/react-library.json",
+  "extends": "tsconfig/react-library.json",
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"]
 }

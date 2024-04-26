@@ -1,28 +1,38 @@
-## Getting Started
+# Reference Docs
 
-First, run the development server:
+Supabase Reference Docs
 
-```bash
-yarn dev
+## Maintainers
+
+If you are a maintainer of any tools in the Supabase ecosystem, you can use this site to provide documentation for the tools & libraries that you maintain.
+
+## Versioning
+
+All tools have versioned docs, which are kept in separate folders. For example, the CLI has the following folders and files:
+
+- `cli`: the "next" release.
+- `cli_spec`: contains the DocSpec for the "next" release (see below).
+- `cli_versioned_docs`: a version of the documentation for every release (including the most current version).
+- `cli_versioned_sidebars`: a version of the sidebar for every release (including the most current version).
+
+When you release a new version of a tool, you should also release a new version of the docs. You can do this via the command line. For example, if you just released the CLI version `1.0.1`:
+
+```
+npm run cli:version 1.0.1
 ```
 
-Open [http://localhost:3001](http://localhost:3001) with your browser to see the result.
+## DocSpec
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+We use documentation specifications which can be used to generate human-readable docs.
 
-To create [API routes](https://nextjs.org/docs/app/building-your-application/routing/router-handlers) add an `api/` directory to the `app/` directory with a `route.ts` file. For individual endpoints, create a subfolder in the `api` directory, like `api/hello/route.ts` would map to [http://localhost:3001/api/hello](http://localhost:3001/api/hello).
+- OpenAPI: for documenting API endpoints.
+- SDKSpec (custom to Supabase): for SDKs and client libraries.
+- ConfigSpec (custom to Supabase): for configuration options.
+- CLISpec (custom to Supabase): for CLI commands and usage.
 
-## Learn More
+The benefit of using custom specifications is that we can generate many other types from a strict schema (eg, HTML and manpages).
+It also means that we can switch to any documentation system we want. On this site we use Next.JS, but on Supabase's official website, we use a custom React site and expose only a subset of the available API for each tool.
 
-To learn more about Next.js, take a look at the following resources:
+## Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn/foundations/about-nextjs) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_source=github.com&utm_medium=referral&utm_campaign=turborepo-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To contribute to docs, see the [developers' guide](https://github.com/supabase/supabase/blob/master/apps/docs/DEVELOPERS.md) and [contributing guide](https://github.com/supabase/supabase/blob/master/apps/docs/CONTRIBUTING.md).

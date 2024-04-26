@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 import _announcement from './data/Announcement.json'
 import { IconX, cn } from 'ui'
-import { useRouter, usePathname } from 'next/navigation'
+import { useRouter } from 'next/router'
 import { PropsWithChildren } from 'react'
 
 export interface AnnouncementProps {
@@ -30,8 +30,7 @@ const Announcement = ({
   const [hidden, setHidden] = useState(false)
 
   const router = useRouter()
-  const pathname = usePathname()
-  const isLaunchWeekSection = pathname.includes('launch-week')
+  const isLaunchWeekSection = router.pathname.includes('launch-week')
 
   // override to hide announcement
   if (!show || !announcement.show) return null

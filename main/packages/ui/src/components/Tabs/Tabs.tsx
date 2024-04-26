@@ -1,5 +1,5 @@
 import * as TabsPrimitive from '@radix-ui/react-tabs'
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/router'
 import {
   Children,
   type KeyboardEvent,

@@ -8,7 +8,6 @@
     "typecheck_CURRENTLY_IGNORED": "tsc --noEmit"
   },
   "dependencies": {
-    "@supabase/auth-helpers-react": "^0.5.0",
     "@types/dat.gui": "^0.7.12",
     "config": "*",
     "dat.gui": "^0.7.9",
@@ -24,8 +23,8 @@
     "typescript": "^5.4.3"
   },
   "peerDependencies": {
-    "@supabase/auth-js": "^2.63.0",
     "@supabase/supabase-js": "*",
+    "@supabase/auth-js": "^2.63.0",
     "next": "*",
     "react": "*",
     "react-dom": "*"

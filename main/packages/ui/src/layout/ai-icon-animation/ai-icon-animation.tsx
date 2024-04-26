@@ -1,43 +1,43 @@
 // make a function that returns a component
 
-import { useState, useEffect } from 'react';
-import styles from './ai-icon-animation-style.module.css';
-import { cn } from 'ui';
+import { useState, useEffect } from 'react'
+import styles from '@ui/layout/ai-icon-animation/ai-icon-animation-style.module.css'
+import { cn } from 'ui'
 
 interface Props {
-  loading?: boolean;
-  className?: string;
-  allowHoverEffect?: boolean;
+  loading?: boolean
+  className?: string
+  allowHoverEffect?: boolean
 }
 
 const AiIconAnimation = ({ loading = false, className, allowHoverEffect = false }: Props) => {
-  const [step, setStep] = useState(1);
-  const [exitStep, setExitStep] = useState(1);
-  const [isAnimating, setIsAnimating] = useState(true);
+  const [step, setStep] = useState(1)
+  const [exitStep, setExitStep] = useState(1)
+  const [isAnimating, setIsAnimating] = useState(true)
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (loading) {
-        setIsAnimating(true);
+        setIsAnimating(true)
         setStep((step) => {
-          return (step % 5) + 1;
-        });
+          return (step % 5) + 1
+        })
         setExitStep((step) => {
-          return (step % 5) + 1;
-        });
+          return (step % 5) + 1
+        })
       }
-    }, 500);
-    return () => clearInterval(interval);
-  }, [loading]);
+    }, 500)
+    return () => clearInterval(interval)
+  }, [loading])
 
   useEffect(() => {
     if (loading === false) {
       setTimeout(() => {
-        setIsAnimating(false);
-      }, 500);
-      setStep(1);
+        setIsAnimating(false)
+      }, 500)
+      setStep(1)
     }
-  }, [loading]);
+  }, [loading])
 
   return (
     <div
@@ -45,7 +45,7 @@ const AiIconAnimation = ({ loading = false, className, allowHoverEffect = false 
         styles['ai-icon__container'],
         allowHoverEffect && styles['ai-icon__container--allow-hover-effect'],
         loading && isAnimating && styles['spin-ai-icon-container'],
-        className,
+        className
       )}
     >
       <div className={cn(styles['ai-icon__grid'])}>
@@ -55,8 +55,8 @@ const AiIconAnimation = ({ loading = false, className, allowHoverEffect = false 
             loading
               ? styles[`ai-icon__grid__square--step-${step}`]
               : isAnimating
-                ? styles[`ai-icon__grid__square--exiting--step-${exitStep}`]
-                : styles[`ai-icon__grid__square--static`],
+              ? styles[`ai-icon__grid__square--exiting--step-${exitStep}`]
+              : styles[`ai-icon__grid__square--static`]
           )}
         ></div>
         <div
@@ -65,8 +65,8 @@ const AiIconAnimation = ({ loading = false, className, allowHoverEffect = false 
             loading
               ? styles[`ai-icon__grid__square--step-${step}`]
               : isAnimating
-                ? styles[`ai-icon__grid__square--exiting--step-${exitStep}`]
-                : styles[`ai-icon__grid__square--static`],
+              ? styles[`ai-icon__grid__square--exiting--step-${exitStep}`]
+              : styles[`ai-icon__grid__square--static`]
           )}
         ></div>
         <div
@@ -75,8 +75,8 @@ const AiIconAnimation = ({ loading = false, className, allowHoverEffect = false 
             loading
               ? styles[`ai-icon__grid__square--step-${step}`]
               : isAnimating
-                ? styles[`ai-icon__grid__square--exiting--step-${exitStep}`]
-                : styles[`ai-icon__grid__square--static`],
+              ? styles[`ai-icon__grid__square--exiting--step-${exitStep}`]
+              : styles[`ai-icon__grid__square--static`]
           )}
         ></div>
         <div
@@ -85,13 +85,13 @@ const AiIconAnimation = ({ loading = false, className, allowHoverEffect = false 
             loading
               ? styles[`ai-icon__grid__square--step-${step}`]
               : isAnimating
-                ? styles[`ai-icon__grid__square--exiting--step-${exitStep}`]
-                : styles[`ai-icon__grid__square--static`],
+              ? styles[`ai-icon__grid__square--exiting--step-${exitStep}`]
+              : styles[`ai-icon__grid__square--static`]
           )}
         ></div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export { AiIconAnimation };
+export { AiIconAnimation }

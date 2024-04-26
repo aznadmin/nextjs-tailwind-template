@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "cmdk": "^0.2.1",
+    "common": "*",
     "lodash": "*",
     "lucide-react": "*",
     "next-themes": "*",
@@ -17,8 +18,7 @@
     "react-tooltip": "*",
     "reactflow": "*",
     "tsconfig": "*",
-    "ui": "file:../../packages/ui",
-    "common": "file:../../packages/common"
+    "ui": "*"
   },
   "devDependencies": {},
   "peerDependencies": {
